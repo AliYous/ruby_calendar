@@ -6,15 +6,15 @@ Bundler.require
 # comme ça, tu peux faire User.new dans ce fichier d'application. Top.
 require_relative 'lib/user'
 require_relative 'lib/event'
+require_relative 'lib/event_creator'
 
 
-julie = User.new("ali@gmail.fr", 30)
-jean = User.new("jean@hotmail.fr", 15)
 
-arr_user_mail = []
-arr_user_mail.push(julie.email, jean.email)
+event_info = EventCreator.new
+start_date = event_info.start_date_string 
+duration = event_info.duration
+title = event_info.title
+attendees = event_info.attendees
 
-entrainement = Event.new("2019-07-22 15:30", 50, "Entrainement avec jean et julie", arr_user_mail)
-entrainement.to_s
-user_1 = User.find_by_email("ali@gmail.fr")
-puts user_1.age
+evenement1 = Event.new(start_date, duration, title, attendees)
+evenement1.to_s

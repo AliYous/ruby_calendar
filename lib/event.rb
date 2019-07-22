@@ -13,7 +13,7 @@ class Event
 	end
 
   #Décale la date d'un évènement de 24h dans le futur
-  def postpone_24h()
+  def postpone_24h
     self.start_date = start_date + 24*60*60
   end
 
@@ -48,8 +48,8 @@ class Event
 
   def to_s
     puts "Titre : #{title}"
-    puts "Date de début : #{start_date}"
-    puts "Date de fin : #{end_date}"
+    puts "Date de début : #{start_date.to_s}"
+    puts "Date de fin : #{end_date.to_s}"
     puts "Durée : #{duration}"
     puts "Invités : #{attendees}"
     puts "------------------------------------"
@@ -60,7 +60,5 @@ class Event
       puts "La date de début de cet évènement est déjà passée :("
     end
   end
-
-  def ev
 end
 
