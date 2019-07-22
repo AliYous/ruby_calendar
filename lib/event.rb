@@ -19,7 +19,7 @@ class Event
 
   #Se base sur la duration variable pour retourner la date de fin
   def end_date
-    end_date = @start_date + duration*60
+    end_date = start_date + duration*60
     return end_date
   end
 
